@@ -33,7 +33,7 @@ export class Receiver {
     if (!this.status().ready) throw new Error('Transfer incomplete. Keep scanning for missing frames.');
     const parts = Array.from({ length: this.manifest.chunks }, (_, i) => this.chunks.get(i));
     const blob = new Blob(parts, { type: this.manifest.type || 'application/octet-stream' });
-    if (blob.size !== this.manifest.size) throw new Error('Reconstructed size does not match the manifest.');
+    if (blob.size !== this.manifest.size) throw new Error(`Reconstructed ${blob.size.toLocaleString()} bytes, but the sender declared ${this.manifest.size.toLocaleString()} bytes. Reset both devices and restart the transfer; keep QR density unchanged once transmission starts.`);
     const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', await blob.arrayBuffer()))].map(x => x.toString(16).padStart(2, '0')).join('');
     if (digest !== this.manifest.sha256) throw new Error('SHA-256 verification failed. The file was not offered for download.');
     return { blob, sha256: digest, manifest: this.manifest };
