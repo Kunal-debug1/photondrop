@@ -1,0 +1,9 @@
+{
+  "name": "photondrop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"dev": "vite --host 0.0.0.0", "build": "vite build", "preview": "vite preview --host 0.0.0.0", "test": "node --test"},
+  "dependencies": {"jsqr": "^1.4.0", "qrcode": "^1.5.4"},
+  "devDependencies": {"vite": "^6.4.1"}
+}
