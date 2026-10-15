@@ -1,5 +1,9 @@
 # PhotonDrop
 
+[**Try the live demo**](https://kunal-debug1.github.io/photondrop/) · [Deployment status](https://github.com/Kunal-debug1/photondrop/actions/workflows/deploy.yml)
+
+![GitHub Actions deployment status](https://github.com/Kunal-debug1/photondrop/actions/workflows/deploy.yml/badge.svg)
+
 PhotonDrop is a static, local-first web app that moves files between two screens with animated QR codes. It has no backend, account, analytics, upload, or transfer-time network dependency. Both devices open the same app; one sends and the other scans.
 
 ## Run locally
